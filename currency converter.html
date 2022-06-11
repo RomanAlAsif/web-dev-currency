@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+
+
+<center><h1><b><u>Curency Converter App</u></b></h1></center>
+
+
+<form style="border: .25px solid red;
+padding: 20px;">
+
+
+    <div class="form-row">
+      <div class="col-3">
+        <input type="text" select id="amount"  class="form-control" placeholder="Amount">
+      </div>
+
+      <div class="col-3">
+       <!-- <input type="text" class="form-control" placeholder="From"> -->
+        <select id="from" class="form-control">
+            <option disabled selected>
+                From
+            </option>
+            <option>USD</option>
+            <option>BDT</option>
+            <option>INR</option>
+        </select>
+      </div>
+
+      <div class="col-3">
+        <!-- <input type="text" class="form-control" placeholder="From"> -->
+         <select id="to" class="form-control">
+             <option disabled selected>
+                 To
+             </option>
+             <option>USD</option>
+             <option>BDT</option>
+             <option>INR</option>
+         </select>
+       </div>
+
+       <div class="col-3">
+        <!-- <input type="text" class="form-control" placeholder="From"> -->
+       <center> <button onclick="conversion()" type="button" class="btn btn-primary">Convert</button></center>
+       </div>
+     
+           
+
+</div>
+  </form>
+
+  <input id= "res" type="text" class="form-control" placeholder="Your Converted Amount is">
+
+
+
+
+</div>
+    
+<script>
+    //alert("Hello World");
+    function conversion(){
+        var amount = document.getElementById("amount").value;
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+        //alert(amount +"."+from+"."+to);
+
+    var result = "Converted amount is ";        
+    
+    
+    if(from == "USD" && to =="BDT")
+    {
+        result = result+ amount *100;
+        document.getElementById("res").value = result;
+
+    
+    }
+
+
+    else if(from == "BDT" && to =="USD")
+    {
+        result = result+ amount *.01;
+        document.getElementById("res").value = result;
+
+    }
+
+    else if(from == "INR" && to =="BDT")
+    {
+        result = result+ amount *2;
+        document.getElementById("res").value = result;
+
+    }    
+
+    else if(from == "BDT" && to =="INR")
+    {
+        result = result+ amount *.5;
+        document.getElementById("res").value = result;
+
+    }
+
+    else if(from == "USD" && to =="INR")
+    {
+        result = result+ amount *50;
+        document.getElementById("res").value = result;
+
+    }
+    
+    else if(from == "INR" && to =="USD")
+    {
+        result = result+ amount *.02;
+        document.getElementById("res").value = result;
+
+    }
+
+
+
+    }
+
+
+
+</script>
+    </body>
+
+
+    </html>
